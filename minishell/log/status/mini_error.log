@@ -1,0 +1,2 @@
+ls: impossible d'accéder à '/not_dir': Aucun fichier ou dossier de ce nom
+test/status.sh: ech: command not found

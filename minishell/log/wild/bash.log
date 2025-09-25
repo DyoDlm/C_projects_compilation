@@ -1,0 +1,81 @@
+build dev.sh doc Dockerfile lib log Makefile minishell readline.supp run.sh src test
+Dockerfile Makefile
+.editorconfig .git .gitignore .Makefile.swp .vscode
+.editorconfig .git .gitignore .Makefile.swp .vscode HAHAHA\n Dockerfile Makefile
+dev.sh Dockerfile Makefile minishell readline.supp test
+Dockerfile Makefile
+build Dockerfile lib Makefile minishell readline.supp
+.editorconfig .git .gitignore .Makefile.swp
+Dockerfile
+
+doc:
+bash.man
+en.subject.pdf
+errno.man
+shell.excalidraw
+val.man
+
+log:
+1
+2
+3
+4
+5
+6
+7
+8
+bin
+builtin
+cd
+endvar
+hard
+leaks.log
+logical
+outfile01
+pipe
+random
+redirect
+simple
+status
+syntax
+todo
+wild
+*not_exist
+minishell readline.supp
+*i*n*
+minishell readline.supp
+doc Dockerfile log
+Dockerfile
+
+doc:
+bash.man
+en.subject.pdf
+errno.man
+shell.excalidraw
+val.man
+
+log:
+1
+2
+3
+4
+5
+6
+7
+8
+bin
+builtin
+cd
+endvar
+hard
+leaks.log
+logical
+outfile01
+pipe
+random
+redirect
+simple
+status
+syntax
+todo
+wild

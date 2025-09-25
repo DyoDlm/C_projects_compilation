@@ -1,0 +1,54 @@
+test/2.sh: >>: command not found
+test/2.sh: asd: command not found
+test/2.sh: echo : command not found
+test/2.sh: echo -nnnnn: command not found
+test/2.sh: ECho: command not found
+test/2.sh: ECHO: command not found
+test/2.sh: ECHO: command not found
+test/2.sh: /home/dyodlm: Is a directory
+test/2.sh: cd: /home/dyodlm/Desktop/: No such file or directory
+test/2.sh: cd: /home/dyodlm/Desktop/: No such file or directory
+test/2.sh: cd: OME/Desktop/: No such file or directory
+test/2.sh: ECHO: command not found
+test/2.sh: PWD: command not found
+test/2.sh: PWD: command not found
+test/2.sh: ECHO: command not found
+test/2.sh: ECHO: command not found
+test/2.sh: ECHO: command not found
+test/2.sh: ECHO: command not found
+test/2.sh: echok: command not found
+test/2.sh: Echo: command not found
+test/2.sh: Echo: command not found
+test/2.sh: ecco: command not found
+test/2.sh: ecCo: command not found
+test/2.sh: ecCo: command not found
+test/2.sh: -a: command not found
+test/2.sh: LS: command not found
+test/2.sh: Ls: command not found
+test/2.sh: lS: command not found
+test/2.sh: PWD: command not found
+test/2.sh: pWD: command not found
+test/2.sh: pwD: command not found
+test/2.sh: ENV: command not found
+test/2.sh: CAT: command not found
+test/2.sh: EXPORT: command not found
+test/2.sh: |||||||: command not found
+test/2.sh: Echo: command not found
+test/2.sh: EXIT: command not found
+test/2.sh: Exit: command not found
+test/2.sh: UNSET: command not found
+test/2.sh: Unset: command not found
+test/2.sh: EXPORT: command not found
+test/2.sh: Export: command not found
+test/2.sh: <<.: command not found
+test/2.sh: OLDPWD: command not found
+test/2.sh: VAR: command not found
+test/2.sh:  ls: command not found
+test/2.sh:  cat: command not found
+test/2.sh:  echo: command not found
+test/2.sh:  PWD: command not found
+test/2.sh:  pwd: command not found
+test/2.sh: PWD : command not found
+test/2.sh: pwd : command not found
+test/2.sh: pwd : command not found
+test/2.sh: : command not found

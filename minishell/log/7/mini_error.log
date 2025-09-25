@@ -1,0 +1,10 @@
+test/7.sh: cd: /home/dyodlm/Desktop/: No such file or directory
+test/7.sh: touch: command not found
+test/7.sh: tmp_x_file1: command not found
+test/7.sh: ./tmp_x_file1: No such file or directory
+test/7.sh: tmp_x_file1: command not found
+test/7.sh: ./tmp_x_file1: No such file or directory
+test/7.sh: tmp_x_file1: No such file or directory
+test/7.sh: ./tmp_x_file1: No such file or directory
+test/7.sh: cd: doesntexist: No such file or directory
+test/7.sh: ls: No such file or directory

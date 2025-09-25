@@ -1,0 +1,21 @@
+Dockerfile
+      1       2      10
+RUN apk add --no-cache make
+type:	u_pipe
+type:	s_child
+type:	s_lexer
+type:	s_ast
+type:	s_sh
+type:	s_wild
+type:	e_lexer_state
+type:	e_lexer_next_state
+type:	(*t_lexer_handler)(t_lexer
+type:	e_atype
+type:	e_ast_state
+type:	e_redir_type
+type:	s_redir
+type:	(*t_exe)(t_ast
+type:	s_builtin
+1
+YO
+0

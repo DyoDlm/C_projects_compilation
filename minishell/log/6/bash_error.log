@@ -1,0 +1,22 @@
+test/6.sh: ligne 21: tmp_path_test2/a.out: Permission non accordée
+/bin/cat: 42: Aucun fichier ou dossier de ce nom
+test/6.sh: ligne 30:  : commande introuvable
+test/6.sh: ligne 32:     : commande introuvable
+test/6.sh: ligne 34:      : commande introuvable
+/bin/cat: 42: Aucun fichier ou dossier de ce nom
+test/6.sh: ligne 62: /bin/exe42: Aucun fichier ou dossier de ce nom
+test/6.sh: ligne 65: 42 : commande introuvable
+test/6.sh: ligne 68: expr : commande introuvable
+/bin/cat: 42: Aucun fichier ou dossier de ce nom
+test/6.sh: ligne 71: expr : commande introuvable
+test/6.sh: ligne 81: echo 42 : commande introuvable
+test/6.sh: ligne 117: << : commande introuvable
+test/6.sh: ligne 187 : export: « = » : identifiant non valable
+test/6.sh: ligne 189 : export: « = » : identifiant non valable
+test/6.sh: ligne 191 : export: « = » : identifiant non valable
+test/6.sh: ligne 195 : export: « =============123 » : identifiant non valable
+test/6.sh: ligne 230 : cd: /notsuchdir: Aucun fichier ou dossier de ce nom
+test/6.sh: ligne 236 : cd: cmds/: Aucun fichier ou dossier de ce nom
+test/6.sh: ligne 239 : cd: cmds/: Aucun fichier ou dossier de ce nom
+test/6.sh: ligne 242 : cd: ./cmds/: Aucun fichier ou dossier de ce nom
+test/6.sh: ligne 247 : cd: « HOME » non défini

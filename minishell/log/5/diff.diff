@@ -1,0 +1,24 @@
+--- log/5/bash.log	2025-09-23 14:13:57.381808576 +0200
++++ log/5/mini.log	2025-09-23 14:13:51.890957382 +0200
+@@ -46,21 +46 @@
+ /home/dyodlm/ZONE/42_cursus/minishell/42_minishell/test
+-/home/dyodlm/ZONE/42_cursus/minishell/42_minishell/test/tmp_test folder
+-/home/dyodlm/ZONE/42_cursus/minishell/42_minishell/test
+-42
+-42 42
+-42 42
+-1 A B 2
+-1 A B 2
+-1A B 2
+-1 A B 2
+-1 A B2
+-1 A B 2
+-1 AB 2
+-A B 2
+-A B 1
+-12
+-1 2
+-1 2
+-? A B 2
+-1 A B ?
+-1?

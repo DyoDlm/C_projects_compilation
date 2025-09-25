@@ -1,0 +1,3 @@
+cat: ./test_files/infile_big: Aucun fichier ou dossier de ce nom
+test/4.sh: kaka: command not found
+cat: asd: Aucun fichier ou dossier de ce nom

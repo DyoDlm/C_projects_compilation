@@ -1,0 +1,6 @@
+test/random.sh: ligne 26 : export: « A- » : identifiant non valable
+test/random.sh: ligne 30 : export: « HELLO-=123 » : identifiant non valable
+test/random.sh: ligne 31 : export: « = » : identifiant non valable
+test/random.sh: ligne 32 : export: « 123 » : identifiant non valable
+test/random.sh: ligne 40 : cd: trop d'arguments
+test/random.sh: ligne 41 : cd: 123123: Aucun fichier ou dossier de ce nom

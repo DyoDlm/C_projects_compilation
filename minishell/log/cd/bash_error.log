@@ -1,0 +1,2 @@
+test/cd.sh: ligne 15 : cd: ~~: Aucun fichier ou dossier de ce nom
+test/cd.sh: ligne 17 : cd: /prout: Aucun fichier ou dossier de ce nom

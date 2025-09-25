@@ -1,0 +1,37 @@
+cat: cmds.sh: Aucun fichier ou dossier de ce nom
+test/8.sh: ligne 13:  : commande introuvable
+touch: impossible de faire un touch '': Aucun fichier ou dossier de ce nom
+test/8.sh: ligne 24: asd : commande introuvable
+test/8.sh: ligne 31: cat cmds.sh : commande introuvable
+test/8.sh: ligne 35: /bin/echo test1: Aucun fichier ou dossier de ce nom
+test/8.sh: ligne 37: asd : commande introuvable
+test/8.sh: ligne 41: asd : commande introuvable
+test/8.sh: ligne 45: asd : commande introuvable
+test/8.sh: ligne 47: asd : commande introuvable
+test/8.sh: ligne 50: asd : commande introuvable
+test/8.sh: ligne 52: asd : commande introuvable
+test/8.sh: ligne 56: asd : commande introuvable
+test/8.sh: ligne 60: asd : commande introuvable
+test/8.sh: ligne 64: mkdir: Aucun fichier ou dossier de ce nom
+test/8.sh: ligne 65 : cd: /home/dyodlm/tmp: Aucun fichier ou dossier de ce nom
+test/8.sh: ligne 67: touch: Aucun fichier ou dossier de ce nom
+test/8.sh: ligne 68: ./whatever: Aucun fichier ou dossier de ce nom
+test/8.sh: ligne 69: rm: Aucun fichier ou dossier de ce nom
+test/8.sh: ligne 72: ls: Aucun fichier ou dossier de ce nom
+test/8.sh: ligne 73: rm: Aucun fichier ou dossier de ce nom
+test/8.sh: ligne 76 : .: nom de fichier nécessaire en argument
+. : utilisation : . nom_fichier [arguments]
+test/8.sh: ligne 78: .ls: Aucun fichier ou dossier de ce nom
+test/8.sh: ligne 80: ./ls: Aucun fichier ou dossier de ce nom
+test/8.sh: ligne 82: ./ls: Aucun fichier ou dossier de ce nom
+test/8.sh: ligne 84: ./ls: Aucun fichier ou dossier de ce nom
+test/8.sh: ligne 86: ./ls: Aucun fichier ou dossier de ce nom
+test/8.sh: ligne 88: 3123: Aucun fichier ou dossier de ce nom
+test/8.sh: ligne 90: lsa: Aucun fichier ou dossier de ce nom
+test/8.sh: ligne 92: /ls: Aucun fichier ou dossier de ce nom
+test/8.sh: ligne 94: EechoE: Aucun fichier ou dossier de ce nom
+test/8.sh: ligne 96: /ls/: Aucun fichier ou dossier de ce nom
+test/8.sh: ligne 98: /bin/ : est un dossier
+test/8.sh: ligne 100: /bin/cats: Aucun fichier ou dossier de ce nom
+test/8.sh: ligne 102: ./4242424242.sh: Aucun fichier ou dossier de ce nom
+test/8.sh: ligne 104: rm: Aucun fichier ou dossier de ce nom

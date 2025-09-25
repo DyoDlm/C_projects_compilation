@@ -1,0 +1,10 @@
+EXIT WITH 0 STATUS
+exit_code ->0 user ->dyodlm home -> /home/dyodlm
+0HELLO
+EXIT WITH 2 STATUS
+EXIT WITH 0 STATUS
+salut les amis
+amis
+echo_success
+success: echo_success 0
+fail: echo_fail 127

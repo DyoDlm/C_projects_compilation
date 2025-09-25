@@ -1,0 +1,5 @@
+test/5.sh: ligne 87 : cd: ../home/dyodlm/ZONE/42_cursus/minishell/42_minishell: Aucun fichier ou dossier de ce nom
+mkdir: impossible de créer le répertoire «test»: Le fichier existe
+test/5.sh: ligne 91: cd.. : commande introuvable
+mkdir: impossible de créer le répertoire «tmp_test folder»: Le fichier existe
+test/5.sh: ligne 130: tmp_test : commande introuvable

@@ -1,0 +1,7 @@
+--- log/cd/bash_error.log	2025-09-23 14:14:15.737544406 +0200
++++ log/cd/mini_error.log	2025-09-23 14:14:15.651036126 +0200
+@@ -1,2 +1,2 @@
+-test/cd.sh: ligne 15 : cd: ~~: Aucun fichier ou dossier de ce nom
+-test/cd.sh: ligne 17 : cd: /prout: Aucun fichier ou dossier de ce nom
++test/cd.sh: cd: ~~: No such file or directory
++test/cd.sh: cd: /prout: No such file or directory

@@ -1,0 +1,6 @@
+test/random.sh: export: `A-': not a valid identifier
+test/random.sh: export: `HELLO-=123': not a valid identifier
+test/random.sh: export: `=': not a valid identifier
+test/random.sh: export: `123': not a valid identifier
+test/random.sh: cd: too many arguments
+test/random.sh: cd: 123123: No such file or directory

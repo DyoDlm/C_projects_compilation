@@ -1,0 +1,111 @@
+--- log/2/bash_error.log	2025-09-23 14:13:38.434188155 +0200
++++ log/2/mini_error.log	2025-09-23 14:13:37.982333469 +0200
+@@ -1,54 +1,54 @@
+-test/2.sh: ligne 8: >> : commande introuvable
+-test/2.sh: ligne 10: asd : commande introuvable
+-test/2.sh: ligne 19: echo  : commande introuvable
+-test/2.sh: ligne 21: echo -nnnnn : commande introuvable
+-test/2.sh: ligne 23: ECho : commande introuvable
+-test/2.sh: ligne 25: ECHO : commande introuvable
+-test/2.sh: ligne 27: ECHO : commande introuvable
+-test/2.sh: ligne 33: /home/dyodlm: est un dossier
+-test/2.sh: ligne 50 : cd: /home/dyodlm/Desktop/: Aucun fichier ou dossier de ce nom
+-test/2.sh: ligne 53 : cd: /home/dyodlm/Desktop/: Aucun fichier ou dossier de ce nom
+-test/2.sh: ligne 56 : cd: OME/Desktop/: Aucun fichier ou dossier de ce nom
+-test/2.sh: ligne 86: ECHO : commande introuvable
+-test/2.sh: ligne 90: PWD : commande introuvable
+-test/2.sh: ligne 92: PWD : commande introuvable
+-test/2.sh: ligne 96: ECHO : commande introuvable
+-test/2.sh: ligne 98: ECHO : commande introuvable
+-test/2.sh: ligne 100: ECHO : commande introuvable
+-test/2.sh: ligne 102: ECHO : commande introuvable
+-test/2.sh: ligne 120: echok : commande introuvable
+-test/2.sh: ligne 126: Echo : commande introuvable
+-test/2.sh: ligne 129: Echo : commande introuvable
+-test/2.sh: ligne 135: ecco : commande introuvable
+-test/2.sh: ligne 138: ecCo : commande introuvable
+-test/2.sh: ligne 141: ecCo : commande introuvable
+-test/2.sh: ligne 155: -a : commande introuvable
+-test/2.sh: ligne 157: LS : commande introuvable
+-test/2.sh: ligne 159: Ls : commande introuvable
+-test/2.sh: ligne 161: lS : commande introuvable
+-test/2.sh: ligne 165: PWD : commande introuvable
+-test/2.sh: ligne 167: pWD : commande introuvable
+-test/2.sh: ligne 171: pwD : commande introuvable
+-test/2.sh: ligne 173: ENV : commande introuvable
+-test/2.sh: ligne 175: CAT : commande introuvable
+-test/2.sh: ligne 177: EXPORT : commande introuvable
+-test/2.sh: ligne 198: ||||||| : commande introuvable
+-test/2.sh: ligne 207: Echo : commande introuvable
+-test/2.sh: ligne 209: EXIT : commande introuvable
+-test/2.sh: ligne 211: Exit : commande introuvable
+-test/2.sh: ligne 213: UNSET : commande introuvable
+-test/2.sh: ligne 215: Unset : commande introuvable
+-test/2.sh: ligne 217: EXPORT : commande introuvable
+-test/2.sh: ligne 220: Export : commande introuvable
+-test/2.sh: ligne 231: <<. : commande introuvable
+-test/2.sh: ligne 233: OLDPWD : commande introuvable
+-test/2.sh: ligne 235: VAR : commande introuvable
+-test/2.sh: ligne 237:  ls : commande introuvable
+-test/2.sh: ligne 239:  cat : commande introuvable
+-test/2.sh: ligne 241:  echo : commande introuvable
+-test/2.sh: ligne 243:  PWD : commande introuvable
+-test/2.sh: ligne 245:  pwd : commande introuvable
+-test/2.sh: ligne 247: PWD  : commande introuvable
+-test/2.sh: ligne 249: pwd  : commande introuvable
+-test/2.sh: ligne 251: pwd  : commande introuvable
+-test/2.sh: ligne 255:  : commande introuvable
++test/2.sh: >>: command not found
++test/2.sh: asd: command not found
++test/2.sh: echo : command not found
++test/2.sh: echo -nnnnn: command not found
++test/2.sh: ECho: command not found
++test/2.sh: ECHO: command not found
++test/2.sh: ECHO: command not found
++test/2.sh: /home/dyodlm: Is a directory
++test/2.sh: cd: /home/dyodlm/Desktop/: No such file or directory
++test/2.sh: cd: /home/dyodlm/Desktop/: No such file or directory
++test/2.sh: cd: OME/Desktop/: No such file or directory
++test/2.sh: ECHO: command not found
++test/2.sh: PWD: command not found
++test/2.sh: PWD: command not found
++test/2.sh: ECHO: command not found
++test/2.sh: ECHO: command not found
++test/2.sh: ECHO: command not found
++test/2.sh: ECHO: command not found
++test/2.sh: echok: command not found
++test/2.sh: Echo: command not found
++test/2.sh: Echo: command not found
++test/2.sh: ecco: command not found
++test/2.sh: ecCo: command not found
++test/2.sh: ecCo: command not found
++test/2.sh: -a: command not found
++test/2.sh: LS: command not found
++test/2.sh: Ls: command not found
++test/2.sh: lS: command not found
++test/2.sh: PWD: command not found
++test/2.sh: pWD: command not found
++test/2.sh: pwD: command not found
++test/2.sh: ENV: command not found
++test/2.sh: CAT: command not found
++test/2.sh: EXPORT: command not found
++test/2.sh: |||||||: command not found
++test/2.sh: Echo: command not found
++test/2.sh: EXIT: command not found
++test/2.sh: Exit: command not found
++test/2.sh: UNSET: command not found
++test/2.sh: Unset: command not found
++test/2.sh: EXPORT: command not found
++test/2.sh: Export: command not found
++test/2.sh: <<.: command not found
++test/2.sh: OLDPWD: command not found
++test/2.sh: VAR: command not found
++test/2.sh:  ls: command not found
++test/2.sh:  cat: command not found
++test/2.sh:  echo: command not found
++test/2.sh:  PWD: command not found
++test/2.sh:  pwd: command not found
++test/2.sh: PWD : command not found
++test/2.sh: pwd : command not found
++test/2.sh: pwd : command not found
++test/2.sh: : command not found

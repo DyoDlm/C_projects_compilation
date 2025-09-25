@@ -1,0 +1,123 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   exec_bin.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jvoisard <jonas.voisard@gmail.com>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/23 16:12:21 by jvoisard          #+#    #+#             */
+/*   Updated: 2025/03/30 11:51:53 by jvoisard         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "minishell.h"
+
+static char	**get_paths(t_sh *shell)
+{
+	char	**path_var;
+	char	*cursor_start;
+	char	*cursor_end;
+	char	**paths;
+
+	paths = NULL;
+	path_var = string_array_find_start_with(shell->env, "PATH=");
+	if (!path_var)
+		return (paths);
+	cursor_start = *path_var + 5;
+	cursor_end = cursor_start;
+	while (*cursor_end)
+	{
+		while (*cursor_end && *cursor_end != ':')
+			cursor_end++;
+		string_array_push(&paths, ft_strcut(cursor_start, cursor_end));
+		if (!*cursor_end)
+			break ;
+		cursor_end++;
+		cursor_start = cursor_end;
+	}
+	return (paths);
+}
+
+static char	*build_path(char *dir, char *name)
+{
+	char	*dir_slash;
+	char	*path;
+
+	if (dir[ft_strlen(dir) - 1] == '/')
+		dir_slash = ft_strdup(dir);
+	else
+		dir_slash = ft_strcat(dir, "/");
+	if (!dir_slash)
+		return (NULL);
+	path = ft_strcat(dir_slash, name);
+	free(dir_slash);
+	return (path);
+}
+
+static char	*find_bin(char *dir, char *name)
+{
+	DIR				*dirp;
+	struct dirent	*dp;
+
+	dirp = opendir(dir);
+	if (!dirp)
+	{
+		errno = false;
+		return (NULL);
+	}
+	while (true)
+	{
+		dp = readdir(dirp);
+		if (!dp)
+			break ;
+		if (!ft_strcmp(dp->d_name, name))
+		{
+			closedir(dirp);
+			return (build_path(dir, name));
+		}
+	}
+	closedir(dirp);
+	return (NULL);
+}
+
+static char	*get_bin_path(t_ast *node)
+{
+	char	**paths;
+	char	**dir;
+	char	*bin;
+
+	paths = get_paths(node->shell);
+	if (!paths)
+		return (NULL);
+	dir = paths;
+	bin = NULL;
+	while (*dir && !bin)
+	{
+		bin = find_bin(*dir, *node->tokens);
+		dir++;
+	}
+	string_array_free(&paths);
+	return (bin);
+}
+
+int	exec_bin(t_ast *node)
+{
+	char	*bin_path;
+
+	if (!is_env_path_defined(node)
+		|| **node->tokens == '.'
+		|| **node->tokens == '/')
+		return (exec_bin_try(node, *node->tokens));
+	bin_path = get_bin_path(node);
+	if (!bin_path)
+	{
+		node->status = 127;
+		node->shell->exit_status = 127;
+		exec_redir_restore_std(node);
+		return (throw(node, (char *[]){
+				*node->tokens,
+				": command not found",
+				NULL}));
+	}
+	return (exec_bin_try(node, bin_path));
+}

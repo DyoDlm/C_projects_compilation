@@ -1,0 +1,15 @@
+--- log/random/bash_error.log	2025-09-23 14:14:23.172255652 +0200
++++ log/random/mini_error.log	2025-09-23 14:14:23.092250358 +0200
+@@ -1,6 +1,6 @@
+-test/random.sh: ligne 26 : export: « A- » : identifiant non valable
+-test/random.sh: ligne 30 : export: « HELLO-=123 » : identifiant non valable
+-test/random.sh: ligne 31 : export: « = » : identifiant non valable
+-test/random.sh: ligne 32 : export: « 123 » : identifiant non valable
+-test/random.sh: ligne 40 : cd: trop d'arguments
+-test/random.sh: ligne 41 : cd: 123123: Aucun fichier ou dossier de ce nom
++test/random.sh: export: `A-': not a valid identifier
++test/random.sh: export: `HELLO-=123': not a valid identifier
++test/random.sh: export: `=': not a valid identifier
++test/random.sh: export: `123': not a valid identifier
++test/random.sh: cd: too many arguments
++test/random.sh: cd: 123123: No such file or directory

@@ -1,0 +1,61 @@
+test/3.sh: ligne 43: ./outfiles/outfile01: Aucun fichier ou dossier de ce nom
+test/3.sh: ligne 45: ./outfiles/outfile01: Aucun fichier ou dossier de ce nom
+test/3.sh: ligne 47: 123: Aucun fichier ou dossier de ce nom
+test/3.sh: ligne 48: 123: Aucun fichier ou dossier de ce nom
+test/3.sh: ligne 167: eCho : commande introuvable
+test/3.sh: ligne 169: eChO : commande introuvable
+test/3.sh: ligne 171: eCHO : commande introuvable
+test/3.sh: ligne 173: ECHO : commande introuvable
+test/3.sh: ligne 195 : cd: /Users: Aucun fichier ou dossier de ce nom
+test/3.sh: ligne 215 : cd: //file_tests: Aucun fichier ou dossier de ce nom
+test/3.sh: ligne 224 : cd: doesntexist: Aucun fichier ou dossier de ce nom
+test/3.sh: ligne 228 : cd: wtf: Aucun fichier ou dossier de ce nom
+test/3.sh: ligne 230 : cd: ?: Aucun fichier ou dossier de ce nom
+test/3.sh: ligne 232 : cd: +: Aucun fichier ou dossier de ce nom
+test/3.sh: ligne 234 : cd: _: Aucun fichier ou dossier de ce nom
+test/3.sh: ligne 236 : cd: woof: Aucun fichier ou dossier de ce nom
+test/3.sh: ligne 238 : cd: trop d'arguments
+test/3.sh: ligne 243 : cd: doesntexist: Aucun fichier ou dossier de ce nom
+test/3.sh: ligne 247 : cd: doesntexist: Aucun fichier ou dossier de ce nom
+test/3.sh: ligne 255 : cd: wtf: Aucun fichier ou dossier de ce nom
+test/3.sh: ligne 264 : cd: ?: Aucun fichier ou dossier de ce nom
+test/3.sh: ligne 268 : cd: +: Aucun fichier ou dossier de ce nom
+test/3.sh: ligne 272 : cd: _: Aucun fichier ou dossier de ce nom
+test/3.sh: ligne 280 : cd: echo: Aucun fichier ou dossier de ce nom
+test/3.sh: ligne 284 : cd: trop d'arguments
+test/3.sh: ligne 292 : cd: //file_tests: Aucun fichier ou dossier de ce nom
+test/3.sh: ligne 296 : cd: //something: Aucun fichier ou dossier de ce nom
+test/3.sh: ligne 301 : cd: trop d'arguments
+test/3.sh: ligne 305 : cd: trop d'arguments
+test/3.sh: ligne 309 : cd: trop d'arguments
+test/3.sh: ligne 327 : cd: ../test: Aucun fichier ou dossier de ce nom
+test/3.sh: ligne 358 : export: « =============123 » : identifiant non valable
+test/3.sh: ligne 359 : export: « = » : identifiant non valable
+test/3.sh: ligne 360 : export: « =42 » : identifiant non valable
+test/3.sh: ligne 361 : export: « = » : identifiant non valable
+test/3.sh: ligne 362 : export: « = » : identifiant non valable
+test/3.sh: ligne 368 : export: « 0 » : identifiant non valable
+test/3.sh: ligne 373 : export: « = » : identifiant non valable
+test/3.sh: ligne 374 : export: « === » : identifiant non valable
+test/3.sh: ligne 375 : export: « === » : identifiant non valable
+test/3.sh: ligne 376 : export: « TE-ST=100 » : identifiant non valable
+test/3.sh: ligne 377 : export: « TEST-=100 » : identifiant non valable
+test/3.sh: ligne 379 : export: « ========== » : identifiant non valable
+test/3.sh: ligne 380 : export: « 1TEST= » : identifiant non valable
+test/3.sh: ligne 381 : export: « = » : identifiant non valable
+test/3.sh: ligne 383 : export: « TE+S=T= » : identifiant non valable
+test/3.sh: ligne 384 : export: « TES.T=123 » : identifiant non valable
+test/3.sh: ligne 385 : export: « TES.T=123 » : identifiant non valable
+test/3.sh: ligne 386 : export: « TES+T=123 » : identifiant non valable
+test/3.sh: ligne 388 : export: « TES}T=123 » : identifiant non valable
+test/3.sh: ligne 389 : export: « TES{T=123 » : identifiant non valable
+test/3.sh: ligne 390 : export: « TES-T=123 » : identifiant non valable
+test/3.sh: ligne 394 : export: « TE*ST=123 » : identifiant non valable
+test/3.sh: ligne 395 : export: « TES#T=123 » : identifiant non valable
+test/3.sh: ligne 396 : export: « TES@T=123 » : identifiant non valable
+test/3.sh: ligne 397 : export: « TES!T=123 » : identifiant non valable
+test/3.sh: ligne 399 : export: « =============123 » : identifiant non valable
+test/3.sh: ligne 400 : export: « +++++++=123 » : identifiant non valable
+test/3.sh: ligne 402 : export: « TES^T=123 » : identifiant non valable
+test/3.sh: ligne 403 : export: « TES!T=123 » : identifiant non valable
+test/3.sh: ligne 415 : export: « ?=hallo » : identifiant non valable

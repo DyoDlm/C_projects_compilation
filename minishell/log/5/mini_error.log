@@ -1,0 +1,3 @@
+test/5.sh: cd: ../home/dyodlm/ZONE/42_cursus/minishell/42_minishell: No such file or directory
+mkdir: impossible de créer le répertoire «test»: Le fichier existe
+test/5.sh: cd..: command not found

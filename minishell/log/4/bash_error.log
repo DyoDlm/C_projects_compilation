@@ -1,0 +1,3 @@
+cat: ./test_files/infile_big: Aucun fichier ou dossier de ce nom
+test/4.sh: ligne 31: kaka : commande introuvable
+cat: asd: Aucun fichier ou dossier de ce nom

@@ -1,0 +1,61 @@
+test/3.sh: ./outfiles/outfile01: No such file or directory
+test/3.sh: ./outfiles/outfile01: No such file or directory
+test/3.sh: 123: No such file or directory
+test/3.sh: 123: No such file or directory
+test/3.sh: eCho: command not found
+test/3.sh: eChO: command not found
+test/3.sh: eCHO: command not found
+test/3.sh: ECHO: command not found
+test/3.sh: cd: /Users: No such file or directory
+test/3.sh: cd: //file_tests: No such file or directory
+test/3.sh: cd: doesntexist: No such file or directory
+test/3.sh: cd: wtf: No such file or directory
+test/3.sh: cd: ?: No such file or directory
+test/3.sh: cd: +: No such file or directory
+test/3.sh: cd: _: No such file or directory
+test/3.sh: cd: woof: No such file or directory
+test/3.sh: cd: too many arguments
+test/3.sh: cd: doesntexist: No such file or directory
+test/3.sh: cd: doesntexist: No such file or directory
+test/3.sh: cd: wtf: No such file or directory
+test/3.sh: cd: ?: No such file or directory
+test/3.sh: cd: +: No such file or directory
+test/3.sh: cd: _: No such file or directory
+test/3.sh: cd: echo: No such file or directory
+test/3.sh: cd: too many arguments
+test/3.sh: cd: //file_tests: No such file or directory
+test/3.sh: cd: //something: No such file or directory
+test/3.sh: cd: too many arguments
+test/3.sh: cd: too many arguments
+test/3.sh: cd: too many arguments
+test/3.sh: cd: ../test: No such file or directory
+test/3.sh: export: `=============123': not a valid identifier
+test/3.sh: export: `=': not a valid identifier
+test/3.sh: export: `=42': not a valid identifier
+test/3.sh: export: `=': not a valid identifier
+test/3.sh: export: `=': not a valid identifier
+test/3.sh: export: `0': not a valid identifier
+test/3.sh: export: `=': not a valid identifier
+test/3.sh: export: `===': not a valid identifier
+test/3.sh: export: `===': not a valid identifier
+test/3.sh: export: `TE-ST=100': not a valid identifier
+test/3.sh: export: `TEST-=100': not a valid identifier
+test/3.sh: export: `==========': not a valid identifier
+test/3.sh: export: `1TEST=': not a valid identifier
+test/3.sh: export: `=': not a valid identifier
+test/3.sh: export: `TE+S=T=': not a valid identifier
+test/3.sh: export: `TES.T=123': not a valid identifier
+test/3.sh: export: `TES.T=123': not a valid identifier
+test/3.sh: export: `TES+T=123': not a valid identifier
+test/3.sh: export: `TES}T=123': not a valid identifier
+test/3.sh: export: `TES{T=123': not a valid identifier
+test/3.sh: export: `TES-T=123': not a valid identifier
+test/3.sh: export: `TE*ST=123': not a valid identifier
+test/3.sh: export: `TES#T=123': not a valid identifier
+test/3.sh: export: `TES@T=123': not a valid identifier
+test/3.sh: export: `TES!T=123': not a valid identifier
+test/3.sh: export: `=============123': not a valid identifier
+test/3.sh: export: `+++++++=123': not a valid identifier
+test/3.sh: export: `TES^T=123': not a valid identifier
+test/3.sh: export: `TES!T=123': not a valid identifier
+test/3.sh: export: `?=hallo': not a valid identifier

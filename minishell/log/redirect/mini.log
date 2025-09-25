@@ -1,0 +1,218 @@
+AAAA
+log/redirect/b.out:BBBB
+log/redirect/b.out:CCCC
+log/redirect/b.out:DDDD
+log/redirect/b.out:EEEE
+log/redirect/b.out:FFFF
+log/redirect/c.out:GGGG
+log/redirect/e.out:YOLO
+log/redirect/e.out:YOLO
+log/redirect/f.out:RUN apk add --no-cache zsh
+log/redirect/f.out:RUN apk add --no-cache bash
+log/redirect/f.out:RUN apk add --no-cache valgrind
+log/redirect/f.out:RUN apk add --no-cache curl
+log/redirect/f.out:RUN apk add --no-cache git
+log/redirect/f.out:RUN apk add --no-cache gcc
+log/redirect/f.out:RUN apk add --no-cache make
+log/redirect/f.out:RUN apk add --no-cache gdb
+log/redirect/f.out:RUN apk add --no-cache mandoc man-pages
+log/redirect/f.out:RUN apk add --no-cache libx11
+log/redirect/f.out:RUN apk add --no-cache libxv
+log/redirect/f.out:RUN apk add --no-cache libx11-dev
+log/redirect/f.out:RUN apk add --no-cache libc-dev
+log/redirect/f.out:RUN apk add --no-cache readline-dev
+log/redirect/f.out:RUN apk add --no-cache libxext-dev
+log/redirect/f.out:RUN apk add --no-cache libbsd-dev
+log/redirect/f.out:RUN apk add --no-cache zlib-dev
+log/redirect/f.out:RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+log/redirect/f.out:RUN apk add --no-cache py3-pip
+log/redirect/f.out:RUN python3 -m venv $HOME/.venv && \
+log/redirect/f.out:		source $HOME/.venv/bin/activate && \
+log/redirect/f.out:		python3 -m pip install --upgrade pip setuptools && \
+log/redirect/f.out:		python3 -m pip install norminette && \
+log/redirect/f.out:		echo "export PATH=$PATH:$HOME/.venv/bin" >> $HOME/.zshrc && \
+log/redirect/f.out:YALA
+log/redirect/d.out:HOHO
+log/redirect/e.out:YOLO
+log/redirect/f.out:RUN apk add --no-cache zsh
+log/redirect/f.out:RUN apk add --no-cache bash
+log/redirect/f.out:RUN apk add --no-cache valgrind
+log/redirect/f.out:RUN apk add --no-cache curl
+log/redirect/f.out:RUN apk add --no-cache git
+log/redirect/f.out:RUN apk add --no-cache gcc
+log/redirect/f.out:RUN apk add --no-cache make
+log/redirect/f.out:RUN apk add --no-cache gdb
+log/redirect/f.out:RUN apk add --no-cache mandoc man-pages
+log/redirect/f.out:RUN apk add --no-cache libx11
+log/redirect/f.out:RUN apk add --no-cache libxv
+log/redirect/f.out:RUN apk add --no-cache libx11-dev
+log/redirect/f.out:RUN apk add --no-cache libc-dev
+log/redirect/f.out:RUN apk add --no-cache readline-dev
+log/redirect/f.out:RUN apk add --no-cache libxext-dev
+log/redirect/f.out:RUN apk add --no-cache libbsd-dev
+log/redirect/f.out:RUN apk add --no-cache zlib-dev
+log/redirect/f.out:RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+log/redirect/f.out:RUN apk add --no-cache py3-pip
+log/redirect/f.out:RUN python3 -m venv $HOME/.venv && \
+log/redirect/f.out:		source $HOME/.venv/bin/activate && \
+log/redirect/f.out:		python3 -m pip install --upgrade pip setuptools && \
+log/redirect/f.out:		python3 -m pip install norminette && \
+log/redirect/f.out:		echo "export PATH=$PATH:$HOME/.venv/bin" >> $HOME/.zshrc && \
+log/redirect/f.out:YALA
+log/redirect/e.out:YOLO
+log/redirect/e.out:NAME			=	minishell
+log/redirect/e.out:DIR_SRC			=	./src
+log/redirect/e.out:DIR_BUILD		=	./build
+log/redirect/e.out:SOURCES			=	ast/ast_create.c ast/ast_parse.c ast/ast_parse_command.c ast/ast_parse_pipe.c ast/ast_parse_redir.c ast/ast_parse_subshell.c ast/ast_parse_tilde.c ast/ast_tokens_each.c ast/ast_tokens_find.c builtin/cd.c builtin/echo.c builtin/env.c builtin/exit.c builtin/export.c builtin/export_print.c builtin/pwd.c builtin/unset.c exec/exec_ast.c exec/exec_bin.c exec/exec_bin_try.c exec/exec_child.c exec/exec_command.c exec/exec_logical.c exec/exec_pipeline.c exec/exec_redir_heredoc.c exec/exec_redir_std.c exec/exec_undescore.c exec/exec_utils.c input/get_next_line.c input/input_read.c lexer/lexer_action.c lexer/lexer_action_var.c lexer/lexer_action_var_catch_wild.c lexer/lexer_action_var_dquote.c lexer/lexer.c lexer/lexer_state.c lexer/lexer_wilcard.c main.c shell/shell.c shell/shell_exec.c utils/string_array.c utils/string_array_dup.c utils/string_array_find.c utils/string_array_find_last.c utils/string_array_join.c utils/string_array_match.c utils/string_array_slice.c utils/string_array_sort.c utils/string.c utils/throw_error.c utils/waitstatus.c 
+log/redirect/e.out:SOURCES_NAME	=	$(basename $(SOURCES))
+log/redirect/e.out:OBJECTS			=	$(addsuffix .o, $(addprefix $(DIR_BUILD)/, $(SOURCES_NAME)))
+log/redirect/e.out:CFLAGS			=	-Wall -Wextra -Werror -g
+log/redirect/e.out:LIBFT			=	./lib/libft
+log/redirect/e.out:LDINCLUDE		=	-I$(LIBFT) -I$(DIR_SRC)
+log/redirect/e.out:LDFLAGS			=	-L$(LIBFT)
+log/redirect/e.out:LDLIBS			=	-lft -I/usr/local/include -lreadline
+log/redirect/f.out:RUN apk add --no-cache zsh
+log/redirect/f.out:RUN apk add --no-cache bash
+log/redirect/f.out:RUN apk add --no-cache valgrind
+log/redirect/f.out:RUN apk add --no-cache curl
+log/redirect/f.out:RUN apk add --no-cache git
+log/redirect/f.out:RUN apk add --no-cache gcc
+log/redirect/f.out:RUN apk add --no-cache make
+log/redirect/f.out:RUN apk add --no-cache gdb
+log/redirect/f.out:RUN apk add --no-cache mandoc man-pages
+log/redirect/f.out:RUN apk add --no-cache libx11
+log/redirect/f.out:RUN apk add --no-cache libxv
+log/redirect/f.out:RUN apk add --no-cache libx11-dev
+log/redirect/f.out:RUN apk add --no-cache libc-dev
+log/redirect/f.out:RUN apk add --no-cache readline-dev
+log/redirect/f.out:RUN apk add --no-cache libxext-dev
+log/redirect/f.out:RUN apk add --no-cache libbsd-dev
+log/redirect/f.out:RUN apk add --no-cache zlib-dev
+log/redirect/f.out:RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+log/redirect/f.out:RUN apk add --no-cache py3-pip
+log/redirect/f.out:RUN python3 -m venv $HOME/.venv && \
+log/redirect/f.out:		source $HOME/.venv/bin/activate && \
+log/redirect/f.out:		python3 -m pip install --upgrade pip setuptools && \
+log/redirect/f.out:		python3 -m pip install norminette && \
+log/redirect/f.out:		echo "export PATH=$PATH:$HOME/.venv/bin" >> $HOME/.zshrc && \
+log/redirect/f.out:YALA
+log/redirect/e.out:NAME			=	minishell
+log/redirect/e.out:DIR_SRC			=	./src
+log/redirect/e.out:DIR_BUILD		=	./build
+log/redirect/e.out:SOURCES			=	ast/ast_create.c ast/ast_parse.c ast/ast_parse_command.c ast/ast_parse_pipe.c ast/ast_parse_redir.c ast/ast_parse_subshell.c ast/ast_parse_tilde.c ast/ast_tokens_each.c ast/ast_tokens_find.c builtin/cd.c builtin/echo.c builtin/env.c builtin/exit.c builtin/export.c builtin/export_print.c builtin/pwd.c builtin/unset.c exec/exec_ast.c exec/exec_bin.c exec/exec_bin_try.c exec/exec_child.c exec/exec_command.c exec/exec_logical.c exec/exec_pipeline.c exec/exec_redir_heredoc.c exec/exec_redir_std.c exec/exec_undescore.c exec/exec_utils.c input/get_next_line.c input/input_read.c lexer/lexer_action.c lexer/lexer_action_var.c lexer/lexer_action_var_catch_wild.c lexer/lexer_action_var_dquote.c lexer/lexer.c lexer/lexer_state.c lexer/lexer_wilcard.c main.c shell/shell.c shell/shell_exec.c utils/string_array.c utils/string_array_dup.c utils/string_array_find.c utils/string_array_find_last.c utils/string_array_join.c utils/string_array_match.c utils/string_array_slice.c utils/string_array_sort.c utils/string.c utils/throw_error.c utils/waitstatus.c 
+log/redirect/e.out:SOURCES_NAME	=	$(basename $(SOURCES))
+log/redirect/e.out:OBJECTS			=	$(addsuffix .o, $(addprefix $(DIR_BUILD)/, $(SOURCES_NAME)))
+log/redirect/e.out:CFLAGS			=	-Wall -Wextra -Werror -g
+log/redirect/e.out:LIBFT			=	./lib/libft
+log/redirect/e.out:LDINCLUDE		=	-I$(LIBFT) -I$(DIR_SRC)
+log/redirect/e.out:LDFLAGS			=	-L$(LIBFT)
+log/redirect/e.out:LDLIBS			=	-lft -I/usr/local/include -lreadline
+log/redirect/f.out:RUN apk add --no-cache zsh
+log/redirect/f.out:RUN apk add --no-cache bash
+log/redirect/f.out:RUN apk add --no-cache valgrind
+log/redirect/f.out:RUN apk add --no-cache curl
+log/redirect/f.out:RUN apk add --no-cache git
+log/redirect/f.out:RUN apk add --no-cache gcc
+log/redirect/f.out:RUN apk add --no-cache make
+log/redirect/f.out:RUN apk add --no-cache gdb
+log/redirect/f.out:RUN apk add --no-cache mandoc man-pages
+log/redirect/f.out:RUN apk add --no-cache libx11
+log/redirect/f.out:RUN apk add --no-cache libxv
+log/redirect/f.out:RUN apk add --no-cache libx11-dev
+log/redirect/f.out:RUN apk add --no-cache libc-dev
+log/redirect/f.out:RUN apk add --no-cache readline-dev
+log/redirect/f.out:RUN apk add --no-cache libxext-dev
+log/redirect/f.out:RUN apk add --no-cache libbsd-dev
+log/redirect/f.out:RUN apk add --no-cache zlib-dev
+log/redirect/f.out:RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+log/redirect/f.out:RUN apk add --no-cache py3-pip
+log/redirect/f.out:RUN python3 -m venv $HOME/.venv && \
+log/redirect/f.out:		source $HOME/.venv/bin/activate && \
+log/redirect/f.out:		python3 -m pip install --upgrade pip setuptools && \
+log/redirect/f.out:		python3 -m pip install norminette && \
+log/redirect/f.out:		echo "export PATH=$PATH:$HOME/.venv/bin" >> $HOME/.zshrc && \
+log/redirect/f.out:YALA
+log/redirect/d.out:SRC_DIR="./src"
+log/redirect/d.out:LOG_DIR="log"
+log/redirect/d.out:PROG="./minishell"
+log/redirect/d.out:LEAKS_CHECK=true
+log/redirect/d.out:if [ $(uname) = "Linux" ]; then
+log/redirect/d.out:	LEAKS_CMD="valgrind"
+log/redirect/d.out:	LEAKS_CMD+=" --leak-check=full"
+log/redirect/d.out:	LEAKS_CMD+=" --track-fds=yes"
+log/redirect/d.out:	LEAKS_CMD+=" --show-leak-kinds=all"
+log/redirect/d.out:	LEAKS_CMD+=" --track-origins=yes"
+log/redirect/d.out:	LEAKS_CMD+=" --log-file=log/leaks.log"
+log/redirect/d.out:	#LEAKS_CMD+=" --trace-children=yes"
+log/redirect/d.out:	LEAKS_CMD="leaks -quiet --atExit --"
+log/redirect/d.out:	LEAKS_CMD=""
+log/redirect/d.out:	STATE_A=""
+log/redirect/d.out:	PROG_PID=""
+log/redirect/d.out:	TEST_DIR="test"
+log/redirect/d.out:	if [[ $2 != "" ]] ; then
+log/redirect/d.out:		TEST_DIR=$2
+log/redirect/d.out:		STATE_B=$(get_state)
+log/redirect/d.out:		if [[ $STATE_A != $STATE_B ]]; then
+log/redirect/d.out:			STATE_A=$STATE_B
+log/redirect/d.out:				if [[ $1 != "" ]] ; then
+log/redirect/d.out:						if [[ $TEST_FILE = *_* ]] ; then
+log/redirect/d.out:	local TEST_FILE=$1
+log/redirect/d.out:	local COMMAND="$PROG $TEST_FILE"
+log/redirect/d.out:		COMMAND="$LEAKS_CMD $COMMAND"
+log/redirect/d.out:	local TEST_NAME="$(basename $TEST_FILE .sh)"
+log/redirect/d.out:	local LOG_FILE="$LOG_DIR/$TEST_NAME/mini.log"
+log/redirect/d.out:	local LOG_FILE_ERR="$LOG_DIR/$TEST_NAME/mini_error.log"
+log/redirect/d.out:	TEST_FILE=$1
+log/redirect/d.out:	LOG_FILE_MINI=$2
+log/redirect/d.out:	LOG_FILE_MINI_ERR=$3
+log/redirect/d.out:	local TEST_NAME="$(basename $TEST_FILE .sh)"
+log/redirect/d.out:	local LOG_FILE="$LOG_DIR/$TEST_NAME/bash.log"
+log/redirect/d.out:	local LOG_FILE_ERR="$LOG_DIR/$TEST_NAME/bash_error.log"
+log/redirect/d.out:	local DIFF_FILE="$LOG_DIR/$TEST_NAME/diff.diff"
+log/redirect/d.out:	local DIFF_FILE_ERR="$LOG_DIR/$TEST_NAME/diff_error.diff"
+log/redirect/d.out:	local DIFF=$(diff -U 1 $LOG_FILE $LOG_FILE_MINI)
+log/redirect/d.out:	local DIFF_ERR=$(diff -U 1 $LOG_FILE_ERR $LOG_FILE_MINI_ERR)
+log/redirect/d.out:	if [[ $DIFF == "" ]] ; then
+log/redirect/d.out:	if [[ $DIFF_ERR == "" ]] ; then
+log/redirect/d.out:	if [[ $(uname) == "Linux" ]];  then
+log/redirect/d.out:		MD5="md5sum"
+log/redirect/d.out:		MD5="md5"
+log/redirect/d.out:	SRC_STATE=$(find -L $SRC_DIR -type f -name "*.[ch]" -exec $MD5 {} \;)
+log/redirect/d.out:	TEST_STATE=$(find -L ./test -type f -name "*.sh" -exec $MD5 {} \;)
+log/redirect/d.out:	SOURCES=$(ls $SRC_DIR/*.c $SRC_DIR/**/*.c | sed "s;$SRC_DIR/;;g" | tr '\n' ' ')
+log/redirect/d.out:	SED_COMMAND="s;^SOURCES	.*;SOURCES			=	$SOURCES;"
+log/redirect/d.out:	if [ $(uname) = "Linux" ];  then
+log/redirect/d.out:	NORM_ERROR=$(sed -e '/.*: OK!/d' <(norminette $1))
+log/redirect/d.out:	if [[ $NORM_ERROR == "" ]] ; then
+log/redirect/d.out:		AWK_SCRIPT='{
+log/redirect/d.out:			if ($2 == "Error!") {
+log/redirect/d.out:				filename = $1;
+log/redirect/d.out:			} else if (filename != "./src/debug.h:") {
+log/redirect/d.out:				for(i = 7; i <= NF; i++) {
+log/redirect/d.out:	LEAKS_DETECTED=$(cat ./log/leaks.log | grep "ERROR SUMMARY" | awk '{printf "%s", $4}' | tr -d "0")
+log/redirect/d.out:	if [[ $LEAKS_DETECTED == "" ]] ; then
+log/redirect/f.out:RUN apk add --no-cache zsh
+log/redirect/f.out:RUN apk add --no-cache bash
+log/redirect/f.out:RUN apk add --no-cache valgrind
+log/redirect/f.out:RUN apk add --no-cache curl
+log/redirect/f.out:RUN apk add --no-cache git
+log/redirect/f.out:RUN apk add --no-cache gcc
+log/redirect/f.out:RUN apk add --no-cache make
+log/redirect/f.out:RUN apk add --no-cache gdb
+log/redirect/f.out:RUN apk add --no-cache mandoc man-pages
+log/redirect/f.out:RUN apk add --no-cache libx11
+log/redirect/f.out:RUN apk add --no-cache libxv
+log/redirect/f.out:RUN apk add --no-cache libx11-dev
+log/redirect/f.out:RUN apk add --no-cache libc-dev
+log/redirect/f.out:RUN apk add --no-cache readline-dev
+log/redirect/f.out:RUN apk add --no-cache libxext-dev
+log/redirect/f.out:RUN apk add --no-cache libbsd-dev
+log/redirect/f.out:RUN apk add --no-cache zlib-dev
+log/redirect/f.out:RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+log/redirect/f.out:RUN apk add --no-cache py3-pip
+log/redirect/f.out:RUN python3 -m venv $HOME/.venv && \
+log/redirect/f.out:		source $HOME/.venv/bin/activate && \
+log/redirect/f.out:		python3 -m pip install --upgrade pip setuptools && \
+log/redirect/f.out:		python3 -m pip install norminette && \
+log/redirect/f.out:		echo "export PATH=$PATH:$HOME/.venv/bin" >> $HOME/.zshrc && \
+log/redirect/f.out:YALA

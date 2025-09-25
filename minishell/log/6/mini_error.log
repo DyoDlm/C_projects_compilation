@@ -1,0 +1,22 @@
+test/6.sh: tmp_path_test2/a.out: Permission denied
+/bin/cat: 42: Aucun fichier ou dossier de ce nom
+test/6.sh: : command not found
+test/6.sh:    : command not found
+test/6.sh:     : command not found
+/bin/cat: 42: Aucun fichier ou dossier de ce nom
+test/6.sh: /bin/exe42: No such file or directory
+test/6.sh: 42: command not found
+test/6.sh: expr: command not found
+/bin/cat: 42: Aucun fichier ou dossier de ce nom
+test/6.sh: expr: command not found
+test/6.sh: echo 42: command not found
+test/6.sh: <<: command not found
+test/6.sh: export: `=': not a valid identifier
+test/6.sh: export: `=': not a valid identifier
+test/6.sh: export: `=': not a valid identifier
+test/6.sh: export: `=============123': not a valid identifier
+test/6.sh: cd: /notsuchdir: No such file or directory
+test/6.sh: cd: cmds/: No such file or directory
+test/6.sh: cd: cmds/: No such file or directory
+test/6.sh: cd: ./cmds/: No such file or directory
+test/6.sh: cd: HOME not set

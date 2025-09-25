@@ -1,0 +1,7 @@
+test/syntax.sh: 123: No such file or directory
+test/syntax.sh: Syntax error
+test/syntax.sh: Parsing failed 🤨
+test/syntax.sh: Syntax error
+test/syntax.sh: Parsing failed 🤨
+test/syntax.sh: Syntax error
+test/syntax.sh: Parsing failed 🤨

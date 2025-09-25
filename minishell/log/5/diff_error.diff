@@ -1,0 +1,10 @@
+--- log/5/bash_error.log	2025-09-23 14:13:57.384514992 +0200
++++ log/5/mini_error.log	2025-09-23 14:13:51.423970028 +0200
+@@ -1,5 +1,3 @@
+-test/5.sh: ligne 87 : cd: ../home/dyodlm/ZONE/42_cursus/minishell/42_minishell: Aucun fichier ou dossier de ce nom
++test/5.sh: cd: ../home/dyodlm/ZONE/42_cursus/minishell/42_minishell: No such file or directory
+ mkdir: impossible de créer le répertoire «test»: Le fichier existe
+-test/5.sh: ligne 91: cd.. : commande introuvable
+-mkdir: impossible de créer le répertoire «tmp_test folder»: Le fichier existe
+-test/5.sh: ligne 130: tmp_test : commande introuvable
++test/5.sh: cd..: command not found

@@ -1,0 +1,2 @@
+test/cd.sh: cd: ~~: No such file or directory
+test/cd.sh: cd: /prout: No such file or directory

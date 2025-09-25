@@ -1,0 +1,3 @@
+test/syntax.sh: ligne 2: 123: Aucun fichier ou dossier de ce nom
+test/syntax.sh: ligne 3: erreur de syntaxe près du symbole inattendu « | »
+test/syntax.sh: ligne 3: `<| echo ok'

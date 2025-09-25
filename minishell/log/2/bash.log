@@ -1,0 +1,60 @@
+ -n
+   -n -n -n -n
+1
+1
+2
+leaks.log
+/home/dyodlm/ZONE/42_cursus/minishell/42_minishell/log
+/home/dyodlm/ZONE/42_cursus/minishell/42_minishell/log
+1
+
+echo
+echo 
+echo -n
+echo -n
+echo
+test1 -n test 2echo 
+
+-nnnnn 
+-$T-$Tnnnnnnnnnnnnn -nnnnnnnn$T -nnnnnnnn 
+-$Tnnnnnnnnnnnnn -nnnnnnnnnnnnnnnn -$T 
+
+1
+2
+leaks.log
+.
+..
+1
+2
+leaks.log
+1
+2
+leaks.log
+/home/dyodlm/ZONE/42_cursus/minishell/42_minishell/log
+segfault | grep segfault
+segfault | grep segfault
+segfault > grep segfault
+segfault < grep segfault
+segfault << grep segfault
+segfault << grep segfault
+segfault | grep segfault
+
+| echo lala | echo | echo
+/home/dyodlm/ZONE/42_cursus/minishell/42_minishell/log
+ok
+ok
+ok
+ok
+maybe
+maybe
+maybe
+cool
+ok
+$$$
+$$$$
+$$$$$
+$/ $/
+/SER
+$/ $/
+$/$/
+$/

@@ -1,0 +1,7 @@
+--- log/redirect/bash_error.log	2025-09-23 14:14:25.233402449 +0200
++++ log/redirect/mini_error.log	2025-09-23 14:14:24.277283962 +0200
+@@ -1,2 +1,2 @@
+-test/redirect.sh: ligne 5: not_a_file: Aucun fichier ou dossier de ce nom
+-test/redirect.sh: ligne 6: not_a_file: Aucun fichier ou dossier de ce nom
++test/redirect.sh: not_a_file: No such file or directory
++test/redirect.sh: not_a_file: No such file or directory

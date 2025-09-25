@@ -1,0 +1,9 @@
+--- log/wild/bash.log	2025-09-23 14:14:31.408483299 +0200
++++ log/wild/mini.log	2025-09-23 14:14:31.297480236 +0200
+@@ -2,4 +2,4 @@
+ Dockerfile Makefile
+-.editorconfig .git .gitignore .Makefile.swp .vscode
+-.editorconfig .git .gitignore .Makefile.swp .vscode HAHAHA\n Dockerfile Makefile
++. .. .editorconfig .git .gitignore .Makefile.swp .vscode
++. .. .editorconfig .git .gitignore .Makefile.swp .vscode HAHAHA\n Dockerfile Makefile
+ dev.sh Dockerfile Makefile minishell readline.supp test

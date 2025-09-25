@@ -1,0 +1,10 @@
+test/7.sh: ligne 36 : cd: /home/dyodlm/Desktop/: Aucun fichier ou dossier de ce nom
+test/7.sh: ligne 49: touch : commande introuvable
+test/7.sh: ligne 50: tmp_x_file1 : commande introuvable
+test/7.sh: ligne 52: ./tmp_x_file1: Aucun fichier ou dossier de ce nom
+test/7.sh: ligne 56: tmp_x_file1 : commande introuvable
+test/7.sh: ligne 58: ./tmp_x_file1: Aucun fichier ou dossier de ce nom
+test/7.sh: ligne 61: tmp_x_file1: Aucun fichier ou dossier de ce nom
+test/7.sh: ligne 63: ./tmp_x_file1: Aucun fichier ou dossier de ce nom
+test/7.sh: ligne 68 : cd: doesntexist: Aucun fichier ou dossier de ce nom
+test/7.sh: ligne 71: ls: Aucun fichier ou dossier de ce nom
