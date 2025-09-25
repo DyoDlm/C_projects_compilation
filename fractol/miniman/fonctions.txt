@@ -1,0 +1,452 @@
+Récapitulatif des fonctions principales
+
+
+
+Initialisation et destruction :
+
+mlx_init
+mlx_new_window
+mlx_destroy_window
+Gestion des images :
+
+mlx_new_image
+mlx_destroy_image
+mlx_get_data_addr
+mlx_put_image_to_window
+Dessin simple :
+
+mlx_pixel_put
+mlx_clear_window
+mlx_string_put
+
+
+Événements :
+
+mlx_loop
+mlx_key_hook
+mlx_mouse_hook
+mlx_expose_hook
+mlx_loop_hook
+mlx_hook
+
+(Optionnelles) 
+mlx_key_press_hook, 
+mlx_key_release_hook, 
+mlx_mouse_press_hook, 
+mlx_mouse_release_hook
+
+
+Synchronisation et utilitaires :
+
+mlx_do_sync
+mlx_mouse_get_pos
+mlx_mouse_hide
+mlx_mouse_show
+mlx_get_screen_size
+
+
+
+
+/////////
+MLX_INIT
+\\\\\\\\\
+
+Rôle : Initialise la connexion avec le serveur X et retourne un environnement graphique.
+
+Utilité : Doit être appelée en premier pour initialiser MiniLibX.
+
+Arguments : Aucun.
+
+Retour : Pointeur vers une structure interne contenant les informations de la connexion au serveur X (t_xvar).
+
+
+
+///////////////
+MLX_NEW_WINDOW
+\\\\\\\\\\\\\\\
+
+Rôle : Crée une nouvelle fenêtre.
+
+Utilité : Permet d’afficher des graphiques ou du texte dans une fenêtre.
+
+Arguments :
+void *mlx_ptr : Pointeur retourné par mlx_init.
+int width : Largeur de la fenêtre.
+int height : Hauteur de la fenêtre.
+char *title : Titre de la fenêtre.
+
+Retour : Pointeur vers une structure interne représentant la fenêtre (t_win_list).
+
+
+
+////////////////////
+MLX_DESTROY_WINDOWS
+\\\\\\\\\\\\\\\\\\\\
+
+Rôle : Ferme et détruit une fenêtre existante.
+
+Utilité : Libère les ressources associées à une fenêtre.
+
+Arguments :
+void *mlx_ptr : Pointeur retourné par mlx_init.
+void *win_ptr : Pointeur retourné par mlx_new_window.
+
+Retour : Aucun.
+
+
+
+//////////////
+MLX_NEW_IMAGE
+\\\\\\\\\\\\\\
+
+Rôle : Crée une nouvelle image en mémoire.
+
+Utilité : Permet de manipuler des pixels hors écran avant de les afficher.
+
+Arguments :
+void *mlx_ptr : Pointeur retourné par mlx_init.
+int width : Largeur de l’image.
+int height : Hauteur de l’image.
+
+Retour : Pointeur vers une structure interne représentant l’image (t_img).
+
+
+
+//////////////////
+MLX_DESTROY_IMAGE
+\\\\\\\\\\\\\\\\\\
+
+Rôle : Supprime une image créée par mlx_new_image.
+
+Utilité : Libère la mémoire associée à une image.
+
+Arguments :
+void *mlx_ptr : Pointeur retourné par mlx_init.
+void *img_ptr : Pointeur retourné par mlx_new_image.
+
+Retour : Aucun.
+
+
+
+//////////////////
+MLX_GET_DATA_ADDR
+\\\\\\\\\\\\\\\\\\
+
+Rôle : Récupère l’adresse mémoire brute d’une image.
+
+Utilité : Permet d’accéder et de modifier directement les pixels d’une image.
+
+Arguments :
+void *img_ptr : Pointeur retourné par mlx_new_image.
+int *bits_per_pixel : Nombre de bits par pixel.
+int *size_line : Taille en octets d’une ligne de l’image.
+int *endian : Endianness de l’image (ordre des octets).
+
+Retour : Adresse mémoire de l’image (tableau de pixels).
+
+
+
+////////////////////////
+MLX_PUT_IMAGE_TO_WINDOW
+\\\\\\\\\\\\\\\\\\\\\\\\
+
+Rôle : Affiche une image dans une fenêtre.
+
+Utilité : Permet de dessiner des graphismes dans une fenêtre.
+
+Arguments :
+void *mlx_ptr : Pointeur retourné par mlx_init.
+void *win_ptr : Pointeur retourné par mlx_new_window.
+void *img_ptr : Pointeur retourné par mlx_new_image.
+int x : Position X dans la fenêtre.
+int y : Position Y dans la fenêtre.
+
+Retour : Aucun.
+
+
+
+//////////////
+MLX_PIXEL_PUT
+\\\\\\\\\\\\\\
+
+Rôle : Dessine un pixel à une position spécifique dans la fenêtre.
+
+Utilité : Méthode simple mais moins performante que mlx_new_image pour dessiner un pixel.
+
+Arguments :
+void *mlx_ptr : Pointeur retourné par mlx_init.
+void *win_ptr : Pointeur retourné par mlx_new_window.
+int x : Coordonnée X.
+int y : Coordonnée Y.
+int color : Couleur du pixel en hexadécimal (ex. 0xFFFFFF pour blanc).
+
+Retour : Aucun.
+
+
+
+/////////
+MLX_LOOP
+\\\\\\\\\
+
+Rôle : Lance une boucle principale pour gérer les événements (souris, clavier, etc.).
+
+Utilité : Gère l’affichage et les interactions utilisateur.
+
+Arguments :
+void *mlx_ptr : Pointeur retourné par mlx_init.
+
+Retour : Aucun.
+
+
+
+/////////////
+MLX_KEY_HOOK
+\\\\\\\\\\\\\
+Rôle : Attache une fonction de rappel pour les événements clavier.
+
+Utilité : Permet de définir des actions à exécuter lors d’appuis sur des touches.
+
+Arguments :
+void *win_ptr : Pointeur retourné par mlx_new_window.
+int (*funct_ptr)() : Fonction de rappel.
+void *param : Paramètres supplémentaires à passer à la fonction de rappel.
+
+Retour : Aucun.
+
+
+
+///////////////
+MLX_MOUSE_HOOK
+\\\\\\\\\\\\\\\
+
+Rôle : Attache une fonction de rappel pour les événements souris.
+
+Utilité : Permet de capturer les clics et mouvements de la souris.
+
+Arguments :
+void *win_ptr : Pointeur retourné par mlx_new_window.
+int (*funct_ptr)() : Fonction de rappel.
+void *param : Paramètres supplémentaires à passer à la fonction de rappel.
+
+Retour : Aucun.
+
+
+////////////////
+MLX_EXPOSE_HOOK
+\\\\\\\\\\\\\\\\
+
+Rôle : Attache une fonction de rappel pour les événements d’exposition.
+
+Utilité : Redessine la fenêtre lorsqu’elle est couverte/découverte.
+
+Arguments :
+void *win_ptr : Pointeur retourné par mlx_new_window.
+int (*funct_ptr)() : Fonction de rappel.
+void *param : Paramètres supplémentaires à passer à la fonction de rappel.
+
+Retour : Aucun.
+
+
+
+//////////////
+MLX_LOOP_HOOK
+\\\\\\\\\\\\\\
+
+Rôle : Attache une fonction de rappel qui sera appelée à chaque itération de la boucle.
+
+Utilité : Permet de créer des animations ou des mises à jour continues.
+
+Arguments :
+void *mlx_ptr : Pointeur retourné par mlx_init.
+int (*funct_ptr)() : Fonction de rappel.
+void *param : Paramètres supplémentaires à passer à la fonction de rappel.
+
+Retour : Aucun.
+
+
+
+/////////////////
+MLX_CLEAR_WINDOW
+\\\\\\\\\\\\\\\\\
+
+Rôle : Efface tout ce qui est dessiné dans une fenêtre.
+
+Utilité : Permet de réinitialiser la fenêtre avant un nouveau dessin.
+
+Arguments :
+void *mlx_ptr : Pointeur retourné par mlx_init.
+void *win_ptr : Pointeur retourné par mlx_new_window.
+
+Retour : Aucun.
+
+
+
+///////////////
+MLX_STRING_PUT
+\\\\\\\\\\\\\\\
+
+Rôle : Affiche du texte dans une fenêtre.
+
+Utilité : Permet d’ajouter des informations textuelles (scores, titres, etc.).
+
+Arguments :
+void *mlx_ptr : Pointeur retourné par mlx_init.
+void *win_ptr : Pointeur retourné par mlx_new_window.
+int x : Coordonnée X.
+int y : Coordonnée Y.
+int color : Couleur du texte.
+char *string : Chaîne de caractères à afficher.
+
+Retour : Aucun.
+
+
+
+/////////
+MLX_HOOK
+\\\\\\\\\
+
+Rôle : Permet d'attacher une fonction de rappel pour tout type d'événement (clavier, souris, expose, etc.).
+
+Utilité : Plus générique que mlx_key_hook, mlx_mouse_hook ou mlx_expose_hook.
+
+Arguments :
+void *win_ptr : Pointeur retourné par mlx_new_window.
+int event : Type d'événement à capturer (ex. KeyPress, ButtonPress).
+int (*funct_ptr)() : Fonction de rappel.
+void *param : Paramètre optionnel à passer à la fonction de rappel.
+
+Retour : Aucun.
+
+
+
+////////////
+MLX_DO_SYNC
+\\\\\\\\\\\\
+
+Rôle : Force un rafraîchissement immédiat de l'affichage.
+
+Utilité : Utile pour garantir que les opérations graphiques soient affichées immédiatement.
+
+Arguments :
+
+void *mlx_ptr : Pointeur retourné par mlx_init.
+
+Retour : Aucun.
+
+
+
+//////////////////
+MLX_MOUSE_GET_POS
+\\\\\\\\\\\\\\\\\\
+
+Rôle : Récupère la position actuelle de la souris.
+
+Utilité : Utile pour des interactions dépendant de la position de la souris.
+
+Arguments :
+void *mlx_ptr : Pointeur retourné par mlx_init.
+void *win_ptr : Pointeur retourné par mlx_new_window.
+int *x : Pointeur pour stocker la position X.
+int *y : Pointeur pour stocker la position Y.
+
+Retour : Aucun.
+
+
+
+///////////////
+MLX_MOUSE_HIDE
+\\\\\\\\\\\\\\\
+
+Rôle : Cache le curseur de la souris.
+
+Utilité : Souvent utilisé dans les jeux ou applications où le curseur n'est pas nécessaire.
+
+Arguments :
+Aucun.
+
+Retour : Aucun.
+
+
+
+///////////////
+MLX_MOUSE_SHOW
+\\\\\\\\\\\\\\\
+
+Rôle : Affiche le curseur de la souris (inversé de mlx_mouse_hide).
+
+Utilité : Pour réactiver l'affichage du curseur après l'avoir masqué.
+
+Arguments :
+Aucun.
+
+Retour : Aucun.
+
+
+
+////////////////////
+MLX_GET_SCREEN_SIZE
+\\\\\\\\\\\\\\\\\\\\
+
+Rôle : Récupère la résolution maximale de l'écran.
+
+Utilité : Permet de dimensionner correctement la fenêtre ou de s'assurer qu'elle reste dans les limites de l'écran.
+
+Arguments :
+void *mlx_ptr : Pointeur retourné par mlx_init.
+int *width : Pointeur pour stocker la largeur maximale de l'écran.
+int *height : Pointeur pour stocker la hauteur maximale de l'écran.
+
+Retour : Aucun.
+
+
+
+///////////////////
+MLX_KEY_PRESS_HOOK (Optionnelle, selon les versions)
+\\\\\\\\\\\\\\\\\\\
+
+Rôle : Capture uniquement les événements de pression sur une touche (sans attendre le relâchement).
+
+Utilité : Répond rapidement à une interaction clavier.
+
+Arguments :
+Identiques à mlx_key_hook.
+
+
+
+/////////////////////
+MLX_KEY_RELEASE_HOOK (Optionnelle, selon les versions)
+\\\\\\\\\\\\\\\\\\\\\
+
+Rôle : Capture les événements de relâchement d'une touche.
+
+Utilité : Utile pour des interactions nécessitant de distinguer pression et relâchement.
+
+Arguments :
+Identiques à mlx_key_hook.
+
+
+
+/////////////////////
+MLX_MOUSE_PRESS_HOOK (Optionnelle, selon les versions)
+\\\\\\\\\\\\\\\\\\\\\
+
+Rôle : Capture les événements de clic souris.
+
+Utilité : Pour traiter les interactions spécifiques de clic gauche, droit ou molette.
+
+Arguments :
+Identiques à mlx_mouse_hook.
+
+
+
+///////////////////////
+MLX_MOUSE_RELEASE_HOOK (Optionnelle, selon les versions)
+\\\\\\\\\\\\\\\\\\\\\\
+
+Rôle : Capture les événements de relâchement de clic souris.
+
+Utilité : Pour des interactions complexes impliquant des clics.
+
+Arguments :
+Identiques à mlx_mouse_hook.
+

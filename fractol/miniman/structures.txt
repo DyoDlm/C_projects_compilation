@@ -1,0 +1,745 @@
+#STRUCTURES MLX#
+
+////////////////////////////////////////////////////////////////////////////////
+
+PARTIE 1
+RESUME
+
+////////////////////////////////////////////////////////////////////////////////
+
+mlx_ptr_t : Structure représentant la connexion à X11, essentielle pour créer et gérer les fenêtres et les images.
+
+mlx_win_t : Représente une fenêtre dans X11, contient toutes les informations nécessaires pour manipuler une fenêtre (taille, titre, image affichée).
+
+mlx_img_t : Représente une image dans X11, utilisée pour dessiner des images dans les fenêtres.
+
+mlx_key_data_t : Contient les informations sur un événement de clavier (appui ou relâchement de touche).
+
+mlx_mouse_data_t : Contient les informations sur un événement de souris (mouvement, clic, etc.).
+
+mlx_event_t : Utilisée pour gérer les événements généraux dans X11, centralise les informations sur les événements de l'interface graphique.
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+PARTIE 1
+DEFINITIONS 
+
+///////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+#MLX_PTR_T
+
+Description : Il s'agit de la structure représentant une connexion à X11 (le serveur de fenêtres X).
+
+Composants :
+void *mlx : Pointeur vers la structure de la connexion à X11. Ce champ est retourné par la fonction mlx_init() et est passé aux autres fonctions pour interagir avec le serveur X.
+
+
+Utilité : Cette structure est utilisée pour maintenir l'état de la connexion avec le serveur X11. Sans elle, il serait impossible de créer des fenêtres, d'afficher des images ou de gérer les événements.
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+#MLX_WIN_T
+
+Description : Représente une fenêtre dans le serveur X11.
+
+Composants :
+void *win : Pointeur vers la fenêtre elle-même (c'est l'objet fenêtre dans X11).
+
+int width : Largeur de la fenêtre.
+
+int height : Hauteur de la fenêtre.
+
+char *title : Titre de la fenêtre.
+
+int bpp : Bits par pixel pour la fenêtre (généralement égal à 32).
+
+int size_line : Nombre de bytes par ligne de la fenêtre (utile pour le traitement des données d'image).
+
+int endian : Type d'endianness pour la fenêtre.
+
+void *img : Pointeur vers l'image actuellement affichée dans la fenêtre.
+
+
+Utilité : Cette structure est utilisée pour créer et manipuler des fenêtres. Elle garde toutes les informations nécessaires pour la gestion de la fenêtre, comme sa taille, son titre et ses propriétés graphiques. Chaque fenêtre est associée à une instance de cette structure.
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+
+#MLX_IMG_T
+
+Description : Structure représentant une image dans le serveur X11.
+
+Composants :
+void *img : Pointeur vers l'image elle-même (généralement une image X11).
+
+int width : Largeur de l'image.
+
+int height : Hauteur de l'image.
+
+int bpp : Bits par pixel pour l'image (souvent égal à 32).
+
+int size_line : Taille de chaque ligne de l'image en bytes.
+
+int endian : Endianness de l'image.
+
+void *data : Pointeur vers la mémoire contenant les données des pixels de l'image.
+
+
+Utilité : Cette structure est utilisée pour représenter les images chargées dans la mémoire et qui peuvent être affichées dans une fenêtre. Elle contient des informations sur la taille de l'image et ses caractéristiques techniques pour que MiniLibX puisse y accéder et y dessiner des pixels.
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+#MLX_KEY_DATA_T
+
+Description : Structure qui contient les informations sur un événement de touche.
+
+
+Composants :
+int keycode : Le code de la touche appuyée.
+
+int type : Type de l'événement (par exemple, un événement de pression de touche ou de relâchement de touche).
+
+void *param : Paramètre supplémentaire passé à la fonction de rappel enregistrée.
+
+
+Utilité : Cette structure est utilisée dans les fonctions de gestion des événements de clavier, comme mlx_key_hook(). Elle permet de récupérer les informations sur une touche appuyée, telles que le code de la touche et son type d'événement.
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+#MLX_MOUSE_DATA_T
+
+Description : Structure contenant les informations sur un événement de souris.
+
+
+Composants :
+int button : Numéro du bouton de la souris (par exemple, bouton gauche, droit, etc.).
+
+int x : Position X de la souris lors de l'événement.
+
+int y : Position Y de la souris lors de l'événement.
+
+int type : Type de l'événement (par exemple, clic ou mouvement de la souris).
+
+void *param : Paramètre supplémentaire passé à la fonction de rappel enregistrée.
+
+
+Utilité : Cette structure est utilisée pour gérer les événements de souris, comme dans la fonction mlx_mouse_hook(). Elle permet d'obtenir des informations détaillées sur le bouton de la souris qui a été activé ou la position de la souris lors d'un événement.
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+#MLX_EVENT_T
+
+Description : Structure générale utilisée pour les événements X11. Elle est principalement utilisée dans les callbacks pour recueillir des informations sur les événements d'interface graphique.
+
+
+Composants :
+int type : Type de l'événement (par exemple, événement de clavier, de souris, ou d'exposition).
+
+void *window : Pointeur vers la fenêtre où l'événement s'est produit.
+
+int x, int y : Coordonnées de l'événement (par exemple, pour un clic de souris).
+
+void *param : Paramètre supplémentaire, passé à la fonction de rappel.
+
+
+Utilité : Cette structure est utilisée pour gérer une variété d'événements qui peuvent se produire dans l'interface graphique. Elle permet d'uniformiser le traitement des événements de différents types (clavier, souris, etc.).
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+PARTIE 2
+RESUME
+ 
+////////////////////////////////////////////////////////////////////////////////
+
+t_xpm_col
+Rôle : Représente une paire nom/couleur dans un fichier XPM.
+Composants :
+name : Identifiant ou code couleur.
+col : La couleur associée sous forme d'un entier.
+Utilité : Utilisée pour gérer les couleurs dans les fichiers XPM.
+
+2. s_col_name
+Rôle : Associe un nom de couleur à une valeur de couleur.
+Composants :
+name : Le nom de la couleur (chaîne de caractères).
+color : La couleur correspondante sous forme d'entier.
+Utilité : Permet de référencer une couleur par son nom et son code, utile pour le traitement des couleurs dans MiniLibX.
+
+3. t_event_list
+Rôle : Associe un événement (souris, clavier, etc.) à une fonction de rappel (hook).
+Composants :
+mask : Type d'événement.
+hook : Fonction de rappel qui sera exécutée lors de l'événement.
+param : Paramètre supplémentaire pour la fonction de rappel.
+Utilité : Permet de gérer les événements et d'exécuter des actions spécifiques lorsque ces événements se produisent.
+
+4. t_win_list
+Rôle : Représente une fenêtre X11 et ses événements associés (souris, clavier, etc.).
+Composants :
+window : L'identifiant de la fenêtre.
+gc : Le contexte graphique associé.
+next : Pointeur vers la fenêtre suivante (pour une liste chainée).
+mouse_hook, key_hook, expose_hook : Fonctions de rappel pour différents événements.
+hooks : Liste d'événements associés à des hooks.
+Utilité : Permet de gérer une ou plusieurs fenêtres X11 et leurs interactions avec l'utilisateur.
+
+5. t_img
+Rôle : Représente une image dans le système X11.
+Composants :
+image : Pointeur vers l'image X11.
+pix : Pixmap associé à l'image.
+gc : Contexte graphique de l'image.
+width, height : Dimensions de l'image.
+data : Données brutes des pixels.
+shm : Segment de mémoire partagée pour des optimisations de performance.
+Utilité : Permet de gérer et manipuler des images dans les fenêtres X11.
+
+6. t_xvar
+Rôle : Représente l'environnement graphique X11 et les paramètres associés.
+Composants :
+display, root : Informations de connexion avec le serveur X et la fenêtre racine.
+win_list : Liste des fenêtres gérées.
+loop_hook : Fonction de rappel pour la boucle principale.
+use_xshm : Indicateur pour l'utilisation de la mémoire partagée.
+wm_delete_window, wm_protocols : Gestion des événements de fermeture de fenêtre.
+Utilité : Gère la connexion à X11, les fenêtres et les événements associés. Elle est essentielle pour initialiser et maintenir l'environnement graphique.
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+PARTIE 2
+DEFINITIONS
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+typedef struct s_xpm_col {
+    int name;
+    int col;
+} t_xpm_col;
+
+
+Rôle : Cette structure représente une paire nom/col dans le contexte des fichiers XPM (X PixMap). Le format XPM est un format d'image couramment utilisé dans les bibliothèques graphiques. Un fichier XPM définit généralement une image en termes de couleurs et de symboles, et cette structure associe une couleur à un nom.
+
+
+Composants :
+
+name : Un identifiant (probablement un indice ou un code) pour une couleur.
+
+col : La couleur associée à ce name (généralement un code couleur en entier, comme un RGB ou un entier représentant une couleur dans un format particulier).
+
+Utilité : Cette structure est utilisée pour gérer les couleurs dans les images XPM et faciliter leur conversion ou leur utilisation dans MiniLibX. Elle peut être utilisée pour stocker les couleurs dans des tableaux ou des fichiers XPM.
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+struct s_col_name {
+    char *name;
+    int color;
+};
+
+
+Rôle : Cette structure associe un nom de couleur à une valeur de couleur sous forme d'entier.
+
+
+Composants :
+
+name : Un pointeur vers une chaîne de caractères qui représente le nom de la couleur (par exemple, "red" ou "blue").
+color : La couleur correspondante sous forme d'un entier (par exemple, un code RGB ou d'autres formats de couleur).
+
+
+Utilité : Cette structure est utilisée pour gérer les couleurs dans le contexte de MiniLibX, en permettant de référencer une couleur par son nom et son code de couleur. Cela peut être utile lors de la création d'images ou pour les ajustements graphiques dans les fenêtres.
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+
+typedef struct s_event_list {
+    int mask;
+    int (*hook)();
+    void *param;
+} t_event_list;
+
+
+Rôle : Cette structure est utilisée pour lier des événements avec des fonctions de rappel (hooks) dans le gestionnaire d'événements de MiniLibX. Chaque événement (par exemple, un événement de clavier ou de souris) est associé à une fonction qui sera appelée lorsque l'événement se produit.
+
+
+Composants :
+
+mask : Le type d'événement que cette structure représente, généralement un masque binaire pour identifier les événements à écouter (par exemple, KeyPress, ButtonPress, etc.).
+
+hook : Pointeur vers la fonction de rappel (callback) qui sera exécutée lorsqu'un événement correspondant au mask se produit. Le type de cette fonction est généralement int (*hook)(int, void*).
+
+param : Un paramètre supplémentaire que la fonction de rappel peut utiliser, permettant de passer des informations contextuelles à la fonction associée à l'événement.
+
+
+Utilité : Cette structure est utilisée pour lier des événements (par exemple, un clic de souris ou une pression de touche) avec des fonctions de gestionnaires d'événements, et de transmettre des données spécifiques à ces gestionnaires.
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+typedef struct s_win_list {
+    Window window;
+    GC gc;
+    struct s_win_list *next;
+    int (*mouse_hook)();
+    int (*key_hook)();
+    int (*expose_hook)();
+    void *mouse_param;
+    void *key_param;
+    void *expose_param;
+    t_event_list hooks[MLX_MAX_EVENT];
+} t_win_list;
+
+
+Rôle : Cette structure représente une fenêtre dans le système graphique X11. Elle contient des informations sur la fenêtre elle-même ainsi que sur les événements et les hooks associés.
+
+
+Composants :
+
+window : L'identifiant de la fenêtre X11. Il s'agit d'un descripteur unique pour la fenêtre, utilisé par le serveur X pour l'identifier.
+
+gc : Le "graphics context" (contexte graphique) de X11, qui contient des informations sur la couleur, la police et d'autres paramètres de dessin.
+next : Un pointeur vers la fenêtre suivante dans une liste chainée, permettant de gérer plusieurs fenêtres.
+
+mouse_hook, key_hook, expose_hook : Fonctions de rappel (callbacks) associées respectivement aux événements de souris, de clavier et d'exposition (re-dessin) de la fenêtre.
+mouse_param, key_param, expose_param : Paramètres supplémentaires passés aux fonctions de rappel des événements de souris, de clavier et d'exposition.
+
+hooks : Un tableau qui contient des événements (comme les événements de souris, de clavier, etc.) associés à des hooks. Le nombre d'événements possibles est limité par MLX_MAX_EVENT.
+
+
+Utilité : Cette structure est utilisée pour maintenir l'état d'une fenêtre X11 et associer des événements (souris, clavier, etc.) à des fonctions spécifiques. Elle est essentielle pour gérer plusieurs fenêtres et leurs interactions avec l'utilisateur.
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+////////////////////////////////////////////
+
+typedef struct s_img {
+    XImage *image;
+    Pixmap pix;
+    GC gc;
+    int size_line;
+    int bpp;
+    int width;
+    int height;
+    int type;
+    int format;
+    char *data;
+    XShmSegmentInfo shm;
+} t_img;
+
+
+Rôle : Cette structure représente une image dans le système X11. Elle contient toutes les informations nécessaires pour gérer l'image, telles que sa taille, son format, et les données des pixels.
+
+
+Composants :
+
+image : Un pointeur vers une structure XImage représentant l'image X11.
+
+pix : Le pixmap associé à l'image, qui est utilisé pour dessiner l'image sur la fenêtre.
+
+gc : Le "graphics context" (contexte graphique) associé à l'image, permettant de définir des propriétés comme la couleur, le dessin, etc.
+
+size_line : Le nombre de bytes par ligne de l'image.
+
+bpp : Bits par pixel, définissant la profondeur de l'image.
+
+width, height : Dimensions de l'image (largeur et hauteur).
+
+type, format : Types et formats spécifiques de l'image, généralement associés au format d'encodage.
+
+data : Les données brutes des pixels de l'image.
+
+shm : Une structure utilisée pour la gestion partagée de la mémoire, permettant d'optimiser les rendus graphiques en utilisant la mémoire partagée (Shared Memory).
+
+
+Utilité : Cette structure est utilisée pour gérer les images dans MiniLibX. Elle permet de charger, manipuler, et afficher des images dans les fenêtres X11. Le champ shm peut être utilisé pour améliorer la performance des opérations sur l'image en utilisant la mémoire partagée.
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+////////////////////////////////////////////
+
+typedef struct s_xvar {
+    Display *display;
+    Window root;
+    int screen;
+    int depth;
+    Visual *visual;
+    Colormap cmap;
+    int private_cmap;
+    t_win_list *win_list;
+    int (*loop_hook)();
+    void *loop_param;
+    int use_xshm;
+    int pshm_format;
+    int do_flush;
+    int decrgb[6];
+    Atom wm_delete_window;
+    Atom wm_protocols;
+    int end_loop;
+} t_xvar;
+
+
+Rôle : Cette structure représente l'environnement graphique X11 et les paramètres associés à une session X. Elle contient des informations sur la connexion avec le serveur X, ainsi que sur les fenêtres et la gestion des événements.
+
+
+Composants :
+
+display : Un pointeur vers la connexion avec le serveur X.
+
+root : La racine de la fenêtre X11 (généralement l'écran principal).
+
+screen, depth, visual, cmap : Paramètres concernant l'affichage, tels que l'écran, la profondeur (couleur) et le visuel (modèle de couleurs), ainsi que la palette de couleurs.
+
+private_cmap : Indicateur pour l'utilisation d'un cmap privé.
+
+win_list : Liste des fenêtres gérées par cette connexion.
+
+loop_hook : Fonction de rappel pour la boucle principale (généralement pour les événements).
+
+loop_param : Paramètre supplémentaire passé à loop_hook.
+
+use_xshm : Indicateur pour l'utilisation de la mémoire partagée (XSHM) pour les images.
+
+pshm_format : Format de mémoire partagée utilisé.
+
+do_flush : Indicateur pour forcer ou non le flush des opérations graphiques.
+
+decrgb[6] : Tableau utilisé pour définir une couleur particulière.
+
+wm_delete_window, wm_protocols : Atoms utilisés pour la gestion des événements liés à la fermeture de la fenêtre (par exemple, quand l'utilisateur clique sur "Fermer").
+
+end_loop : Indicateur pour contrôler la fin de la boucle d'événements.
+
+
+Utilité : Cette structure est fondamentale pour l'initialisation et la gestion de la session graphique X11. Elle contient les informations nécessaires pour ouvrir une connexion avec X11, gérer les fenêtres et les événements, et effectuer des dessins sur l'écran.
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+

@@ -1,0 +1,104 @@
+////////////////
+BITS PAR PIXEL
+\\\\\\\\\\\\\\\\
+
+Le bpp (bits per pixel) est un paramètre crucial dans la manipulation d'images et de pixels en programmation graphique. Voici une explication détaillée de son utilité :
+
+Définition
+bpp (bits per pixel) : Nombre de bits utilisés pour représenter la couleur d’un pixel dans une image.
+Rôle
+Déterminer la profondeur des couleurs :
+
+Le bpp indique combien d'informations sur la couleur sont disponibles pour chaque pixel.
+Plus le bpp est élevé, plus la gamme de couleurs pouvant être représentée est grande.
+Impact sur la qualité visuelle :
+
+1 bpp : Chaque pixel est soit noir, soit blanc (image binaire).
+8 bpp : Permet de représenter 256 couleurs différentes (souvent une palette indexée).
+16 bpp (High Color) : Permet de représenter 65 536 couleurs (5 bits pour le rouge, 6 bits pour le vert, 5 bits pour le bleu).
+24 bpp (True Color) : Permet de représenter environ 16,7 millions de couleurs (8 bits pour chaque canal de couleur : rouge, vert, bleu).
+32 bpp : Ajoute un canal alpha (transparence), en plus des couleurs RGB.
+Accès et manipulation des pixels :
+
+Lorsque vous manipulez des images via la MiniLibX, le bpp vous indique combien de bits (ou octets) sont utilisés pour coder un pixel en mémoire.
+Exemple : Pour une image en 32 bpp, chaque pixel occupe 4 octets en mémoire (1 octet = 8 bits).
+Optimisation de la mémoire :
+
+Un bpp élevé améliore la qualité d'image, mais augmente aussi la consommation de mémoire.
+Exemple :
+Une image 1920x1080 en 24 bpp occupera environ 6,2 Mo (1920 × 1080 × 3 octets).
+La même image en 16 bpp occupera 4,1 Mo.
+
+
+///////////////////////////
+L'ENDIAN
+\\\\\\\\\\\\\\\\\\\\\\\\\
+
+L'endian (ou endianness) détermine l'ordre dans lequel les octets d'une valeur multi-octet (comme un entier ou une couleur codée sur plusieurs octets) sont stockés en mémoire ou transmis dans un système informatique. Voici une explication détaillée de son utilité et de son rôle dans la programmation graphique, notamment avec MiniLibX.
+
+Définition de l'endian
+L'endian est une convention qui spécifie comment les octets sont organisés pour représenter une donnée multi-octet.
+
+Little Endian :
+
+L'octet de poids faible (les bits les moins significatifs) est stocké en premier (à l'adresse mémoire la plus basse).
+Exemple : Le nombre 0x12345678 sera stocké en mémoire comme suit :
+less
+Copy code
+Adresse mémoire :   [00]  [01]  [02]  [03]
+Valeur (Little) :   78    56    34    12
+Big Endian :
+
+L'octet de poids fort (les bits les plus significatifs) est stocké en premier (à l'adresse mémoire la plus basse).
+Exemple : Le nombre 0x12345678 sera stocké en mémoire comme suit :
+less
+Copy code
+Adresse mémoire :   [00]  [01]  [02]  [03]
+Valeur (Big)    :   12    34    56    78
+
+Rôle en programmation graphique
+Dans le contexte de la MiniLibX, l'endian joue un rôle important lorsqu'on manipule des pixels ou des images au niveau des données brutes. Il affecte la manière dont les couleurs sont lues et écrites en mémoire.
+
+Accès aux pixels d'une image :
+
+Une image dans MiniLibX est stockée sous forme de tableau brut de pixels.
+Si les couleurs sont codées sur 4 octets (par exemple, en 32 bits avec RGBA : rouge, vert, bleu, alpha), l'ordre des octets dépend de l'endian du système ou de l'image.
+Problèmes liés à l'endian :
+
+Si l'ordre des octets en mémoire ne correspond pas à l'ordre attendu par votre programme, les couleurs peuvent apparaître incorrectement.
+
+Par exemple, une couleur 0x00FF00FF (violet avec alpha maximal) pourrait être interprétée différemment si les octets sont lus dans un ordre inattendu.
+Paramètre dans mlx_get_data_addr :
+
+Lorsque vous récupérez l'adresse mémoire brute d'une image avec mlx_get_data_addr, la fonction retourne également l'endian sous la forme d'un entier :
+0 : Little Endian.
+1 : Big Endian.
+Cela vous indique comment interpréter les données stockées dans l'image.
+
+
+////////////////////////////////////
+LINE_LENGHT
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+Définition
+Le line_length indique le nombre total d'octets utilisés en mémoire pour stocker une ligne d'image, quelle que soit sa largeur effective en pixels. Ce paramètre est particulièrement utile dans des cas où chaque ligne de l'image est alignée sur une taille fixe pour des raisons de performance ou de compatibilité matérielle.
+
+2. Pourquoi est-il important ?
+Alignement mémoire : Pour que les lignes soient alignées correctement en mémoire, leur taille (en octets) est souvent arrondie à un multiple de 4 ou 8 octets, selon les spécifications de l'architecture du système.
+
+Par exemple, une ligne d'une image de 3 pixels avec 3 octets par pixel (RGB) ne prendrait pas 9 octets en mémoire mais souvent 12 (arrondi à 4 ou 8 octets multiples).
+
+Accès aux pixels : Lors de l'accès à un pixel spécifique (via son adresse mémoire), il est nécessaire de connaître combien d'octets séparent deux lignes successives dans la mémoire pour se déplacer correctement.
+
+Exemple :
+Si l'on travaille avec une image de 100 pixels de large, chaque pixel nécessitant 3 octets (pour RGB), alors :
+
+La largeur réelle en octets serait 100 × 3 = 300 octets.
+Mais si la mémoire est alignée sur 4 octets, le line_length serait 304 octets.
+
+3. Utilisation pratique
+Dans les bibliothèques graphiques :
+
+Lecture d'un pixel : Pour trouver l'adresse d'un pixel situé à la pos (x,y)ADDR_PIXEL = ADDR_DE_BASE + (Y * LL) + (X * BPP/8).
+
+Écriture d'un pixel : De manière similaire, on peut écrire à l'adresse calculée pour modifier un pixel à une position donnée.
